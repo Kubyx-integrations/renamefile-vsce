@@ -17,7 +17,7 @@ function activate(context) {
 		fileNameWithExt.shift();
 
 		const newFileName = await vs.window.showInputBox({placeHolder: `Current name: ${fileName}`});
-		const newFilePath = fileNameWithPath.join('/') + `/${newFileName}.${fileNameWithExt}`;
+		const newFilePath = fileNameWithPath.join('/') + `/${newFileName}`;
 
 		vs.workspace.fs.rename(vs.Uri.file(currentFile.document.fileName), vs.Uri.file(newFilePath));
 	});
