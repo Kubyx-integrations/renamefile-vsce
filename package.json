@@ -11,13 +11,14 @@
   "repository": {
     "url": "https://github.com/Kubyx-integrations/renamefile-vsce"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "engines": {
     "vscode": "^1.101.0"
   },
   "categories": [
     "Snippets"
   ],
+  "os": ["darwin", "linux"],
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
