@@ -2,6 +2,15 @@
   "name": "renamefile",
   "displayName": "RenameFile",
   "description": "Rename a file by running a command for true keyboard warriors",
+  "publisher": "nikkiedev",
+  "author": {
+    "email": "nikkie@schaad.zip",
+    "name": "Nikkie Schaad",
+    "url": "https://schaad.zip"
+  },
+  "repository": {
+    "url": "https://github.com/Kubyx-integrations/renamefile-vsce"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.101.0"
