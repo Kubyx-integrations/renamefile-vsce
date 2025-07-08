@@ -1,9 +1,8 @@
 const vs = require('vscode');
 
 function activate(context) {
-	console.log("renamefile init");
-
 	const cmd = vs.commands.registerCommand('renamefile.rename', async () => {
+		const settings = vs.workspace.getConfiguration('renamefile');
 		const currentFile = vs.window.activeTextEditor;
 
 		if (!currentFile) {
@@ -17,7 +16,16 @@ function activate(context) {
 		fileNameWithExt.shift();
 
 		const newFileName = await vs.window.showInputBox({placeHolder: `Current name: ${fileName}`});
-		const newFilePath = fileNameWithPath.join('/') + `/${newFileName}`;
+
+		if (!newFileName) {
+			return;
+		}
+
+		let newFilePath = fileNameWithPath.join('/') + `/${newFileName}`;
+
+		if (settings.get('keepExtension')) {
+			newFilePath += `.${fileNameWithExt}`;
+		}
 
 		vs.workspace.fs.rename(vs.Uri.file(currentFile.document.fileName), vs.Uri.file(newFilePath));
 	});

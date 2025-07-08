@@ -4,8 +4,11 @@ All notable changes to the "renamefile" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.6]
+- Added "Keep extension" setting, allows for preserving the file extension
+
 ## [0.0.5]
-- removed windows support
+- Set support to MacOS and Linux
 
 ## [0.0.4]
 - Added icon (made by AI)
